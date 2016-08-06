@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogs on Ramblings and Wonderings</title>
+    <link>https://kennyhlam.github.io/blog/</link>
+    <description>Recent content in Blogs on Ramblings and Wonderings</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 06 Aug 2016 20:27:35 +0000</lastBuildDate>
+    <atom:link href="https://kennyhlam.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Getting Started</title>
+      <link>https://kennyhlam.github.io/blog/getting-started/</link>
+      <pubDate>Sat, 06 Aug 2016 20:27:35 +0000</pubDate>
+      
+      <guid>https://kennyhlam.github.io/blog/getting-started/</guid>
+      <description>&lt;p&gt;blah blah blah
+&lt;a href=&#34;http://themes.gohugo.io/hugo-identity-theme/&#34;&gt;http://themes.gohugo.io/hugo-identity-theme/&lt;/a&gt;
+&lt;a href=&#34;http://themes.gohugo.io/material-design/&#34;&gt;http://themes.gohugo.io/material-design/&lt;/a&gt;
+&lt;a href=&#34;http://themes.gohugo.io/strata/&#34;&gt;http://themes.gohugo.io/strata/&lt;/a&gt;
+&lt;a href=&#34;http://themes.gohugo.io/hugo-zen/&#34;&gt;http://themes.gohugo.io/hugo-zen/&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
