@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Golang on Ramblings and Wonderings</title>
-    <link>https://kennyhlam.github.io/tags/golang/</link>
-    <description>Recent content in Golang on Ramblings and Wonderings</description>
+    <title>Software on Ramblings and Wonderings</title>
+    <link>https://kennyhlam.github.io/tags/software/</link>
+    <description>Recent content in Software on Ramblings and Wonderings</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 06 Aug 2016 20:27:35 +0000</lastBuildDate>
-    <atom:link href="https://kennyhlam.github.io/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://kennyhlam.github.io/tags/software/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Getting Started</title>
