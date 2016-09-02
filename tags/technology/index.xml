@@ -6,8 +6,101 @@
     <description>Recent content in Technology on Ramblings and Wonderings</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 14 Aug 2016 00:30:46 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 14 Aug 2016 04:56:49 +0000</lastBuildDate>
     <atom:link href="https://kennyhlam.github.io/tags/technology/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Hugo Issues</title>
+      <link>https://kennyhlam.github.io/2016/08/hugo-issues</link>
+      <pubDate>Sun, 14 Aug 2016 04:56:49 +0000</pubDate>
+      
+      <guid>https://kennyhlam.github.io/2016/08/hugo-issues</guid>
+      <description>&lt;p&gt;There are huge struggles when it comes to using new technology sometimes, and it seems that Hugo is no exception. By &amp;ldquo;new&amp;rdquo;, I mean either because it&amp;rsquo;s new to you or because it&amp;rsquo;s actually new (immature). In this case, I&amp;rsquo;m tempted to lean towards the latter, since Golang and Hugo are both relatively new to the scene.&lt;/p&gt;
+
+&lt;p&gt;In particular, I&amp;rsquo;m in the middle of making a post about the different webframeworks available with Golang (you&amp;rsquo;ll notice I always say &amp;lsquo;Golang&amp;rsquo; instead of just &amp;lsquo;Go&amp;rsquo;&amp;ndash;despite it&amp;rsquo;s official name, it&amp;rsquo;s a lot harder to google when you just say &amp;lsquo;Go&amp;rsquo;). That post may be published either before or after this one, depending on how long it takes me to do my analysis.&lt;/p&gt;
+
+&lt;p&gt;Anyways, so here&amp;rsquo;s the general layout of the two things I wanted to do: create a list of links with associated data and create a list of summaries which may be expanded. For example, with Ruby you might have a few frameworks you want to talk about:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://rubyonrails.org/&#34;&gt;Rails&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://www.sinatrarb.com/&#34;&gt;Sinatra&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://hanamirb.org/&#34;&gt;Hanami&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;etc.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;However, you might also have some additional items associated with each of these, maybe a short summary, analysis, and rating. You want a separate section later to include this information, with your additional analysis collapsible (because it&amp;rsquo;s long).&lt;/p&gt;
+
+&lt;p&gt;It might look something like:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Rails; full-blown with its own ORM and most popular of all web frameworks&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;expandable analysis link&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Sinatra; much easier to start with and light-weight&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;expandable analysis link&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Hanami; immature but many promising features&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;expandable analysis link&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In the end, you decide that there&amp;rsquo;s a lot of information about each of these, and it might be easier to organize into data files, which Hugo &lt;a href=&#34;https://gohugo.io/extras/datafiles/&#34;&gt;supports&lt;/a&gt;. For things to be expandable, you need write some HTML and JavaScript (no biggie). However, you can&amp;rsquo;t embed HTML into your markdown, so you can either write a template for your specific page, or you can write &lt;a href=&#34;https://gohugo.io/extras/shortcodes/&#34;&gt;shortcodes&lt;/a&gt;. I could see myself needing the list of links and collapsible descriptions more often than just once, so I opted for the shortcodes option.&lt;/p&gt;
+
+&lt;p&gt;The data files themselves are nested like so:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;top level hugo directory&amp;gt;
+    archetypes/
+    config.toml
+    content
+    data
+       ruby 
+            webframeworks
+                rails.toml
+                sinatra.toml
+                hanami.toml
+    layouts
+    public
+    themes    
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The data itself might look like:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;rails.toml
+Name = &amp;quot;Rails&amp;quot;
+Summary = &amp;quot;full-blown with its own ORM and most popular of all frameworks&amp;quot;
+Analysis = &amp;quot;wow such ingenious insights into the Rails framework&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Thanks to the &lt;a href=&#34;https://jpescador.com/blog/leverage-shortcodes-in-hugo/&#34;&gt;internet&lt;/a&gt; there&amp;rsquo;s some good examples of shortcodes. However, it feels almost like these shortcodes were very rigid, like they were born from a time before, because they allow very little flexibility. How are variables allotted? When am I allowed to &lt;code&gt;:=&lt;/code&gt; or &lt;code&gt;=&lt;/code&gt;? What types are each of these context variables? In order to figure out Hugo&amp;rsquo;s underlying mechanisms, I did what I always do&amp;ndash;break stuff and println. Golang has some good built-in &lt;code&gt;println(&amp;quot;%T\n&amp;quot;, variable)&lt;/code&gt; to determine type and &lt;code&gt;println(&amp;quot;%v\n&amp;quot;, variable)&lt;/code&gt; to determine value. Also, your hugo instance will print out your issues if there&amp;rsquo;s some compile problem.&lt;/p&gt;
+
+&lt;p&gt;At the end of the day, the only thing I wanted to really do was call the shortcode like &lt;code&gt;&amp;lt; list-links category=&amp;quot;ruby/webframeworks&amp;quot; &amp;gt;&lt;/code&gt; and &lt;code&gt;&amp;lt; list-summary-analysis category=&amp;quot;ruby/webframeworks&amp;quot; collapsed=true &amp;gt;&lt;/code&gt;, which might lead to code which roughly looks like:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ $categories = split (.Get &amp;quot;category&amp;quot;) &amp;quot;/&amp;quot; }}
+{{ $mapping = $.Site.Data }}
+
+{{ range $index, $subcategory := $categories }}
+    {{ $mapping = index $mapping $subcategory }}
+    {{ if eq (add $index 1) (len $categories) }}
+        ## render all your stuff appropriately
+    {{ else }}
+    {{ end }}
+{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;However, you apparently can&amp;rsquo;t re-assign variables like &lt;code&gt;$mapping&lt;/code&gt; in such a fashion, despite my permutation of &lt;code&gt;&amp;amp;&lt;/code&gt;, &lt;code&gt;*&lt;/code&gt;, &lt;code&gt;=&lt;/code&gt;, and &lt;code&gt;:=&lt;/code&gt;&amp;rsquo;s. The only error messages I got were complaints about syntax or issues with the line trying to do the assignment. The lack of truly helpful error messages, documentation, or widespread examples really hampers the transparency of what&amp;rsquo;s happening or how this sort of problem should be correctly handled. In the end, this was the cause of endless frustration and I settled on a not-so-elegant solution of hard-coding how to retrieve the correct sup-mapping out, but it&amp;rsquo;s definitely not robust and won&amp;rsquo;t extend beyond a fixed number of categories. Realistically, I hope I never have more than three levels of categorization for my data on the site, so I think it&amp;rsquo;ll be okay. This is just an example of the types of frustrations you&amp;rsquo;ll have to be able to bear with if you&amp;rsquo;re going to branch out and try something hipster in the world of technology.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Golang Web Frameworks</title>
