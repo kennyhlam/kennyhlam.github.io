@@ -6,8 +6,119 @@
     <description>Recent content in Technology on Ramblings and Wonderings</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 06 Aug 2016 20:27:35 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 14 Aug 2016 00:30:46 +0000</lastBuildDate>
     <atom:link href="https://kennyhlam.github.io/tags/technology/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Golang Web Frameworks</title>
+      <link>https://kennyhlam.github.io/2016/08/golang-web-frameworks</link>
+      <pubDate>Sun, 14 Aug 2016 00:30:46 +0000</pubDate>
+      
+      <guid>https://kennyhlam.github.io/2016/08/golang-web-frameworks</guid>
+      <description>&lt;p&gt;In my spirit of wanting to work on something new using golang, I started with the server. But where on earth to start?! Usually there&amp;rsquo;s some de-facto standard that each language lives with: Rails and Sinatra for Ruby, Django for Python, Spring for Java (I think, I don&amp;rsquo;t really write Java nowadays). Now, these might just be standards for the hobbyist, but they&amp;rsquo;re incredibly popular, well-supported, and well-documented.&lt;/p&gt;
+
+&lt;p&gt;Where the heck to start with for golang? A quick google search could only provide me with an abundance of disjoint results (not in order):&lt;/p&gt;
+
+
+
+
+    &lt;ul&gt;
+    
+        
+            &lt;li&gt;&lt;a href=&#34;http://beego.me/&#34;&gt;Beego&lt;/a&gt;&lt;/li&gt;
+        
+            &lt;li&gt;&lt;a href=&#34;https://echo.labstack.com/&#34;&gt;Echo&lt;/a&gt; (as a side note, echo is a bad name in case you ever end up with an echo binary)&lt;/li&gt;
+        
+            &lt;li&gt;&lt;a href=&#34;https://gin-gonic.github.io/gin/&#34;&gt;Gin&lt;/a&gt;&lt;/li&gt;
+        
+            &lt;li&gt;&lt;a href=&#34;https://goji.io/&#34;&gt;Goji&lt;/a&gt;&lt;/li&gt;
+        
+            &lt;li&gt;&lt;a href=&#34;http://iris-go.com/&#34;&gt;Iris&lt;/a&gt;&lt;/li&gt;
+        
+            &lt;li&gt;&lt;a href=&#34;https://github.com/go-martini/martini&#34;&gt;Martini&lt;/a&gt;&lt;/li&gt;
+        
+            &lt;li&gt;&lt;a href=&#34;https://revel.github.io/&#34;&gt;Revel&lt;/a&gt;&lt;/li&gt;
+        
+
+    
+    &lt;/ul&gt;
+
+
+
+
+&lt;p&gt;A quick browse of &lt;a href=&#34;https://golanglibs.com/category/web-framework?sort=top&#34;&gt;popular ones&lt;/a&gt; added more into the mix:&lt;/p&gt;
+
+&lt;p&gt;And some people even suggest just write your own stack using net/http.&lt;/p&gt;
+
+&lt;p&gt;Of course, a variety of people have their own &lt;a href=&#34;https://www.quora.com/Which-web-framework-for-the-Go-language-is-best-for-creating-a-REST-API&#34;&gt;opinions&lt;/a&gt; and &lt;a href=&#34;http://blog.honeybadger.io/go-write-a-web-app-five-interesting-go-web-frameworks/&#34;&gt;analysis&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Alright, so we&amp;rsquo;ve got a big bag of vaguely indistinguishable options, so how do we choose? Like all decisions, ill-informed decision-making is a deathknell, so we have to learn about each one as best we can.&lt;/p&gt;
+
+&lt;p&gt;The criteria I&amp;rsquo;ll be using to decide are generally the criteria you can use to choose for any software-related decision, and they include the following:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Usage (how well does it do the job, how good does it feel to build using the framework)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Maturity (how popular is it, how widely used is it)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Stability (not unrelated to maturity, but how well is this supported)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Documentation (if I get stuck, how well do the docs describe what&amp;rsquo;s going on)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Design (how did the authors layout the code and choose how it operates)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Performance (is it fast enough)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Supportability (if other people joined the project, how comfortable would they be reading my code)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Clarity (does the framework impose odd or unusual constraints on our code or have weird idioms)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Licensing (how friendly are its terms)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Here is a general breakdown of my feelings on each framework:&lt;/p&gt;
+
+
+
+
+    &lt;ul&gt;
+    
+        
+            &lt;li&gt;&lt;a href=&#34;http://beego.me/&#34; style=&#34;font-weight: 600;&#34;&gt;Beego&lt;/a&gt; -  A full-featured framework, Beego offers much in the way of the tools that a developer might want. While I think the docs could go a ways in setting some patterns that developers could follow, it offers an abundance of features and you won&amp;#39;t be wanting with this framework.&lt;/li&gt;
+            &lt;p style=&#34;font-size: 13px&#34;&gt;Beego takes its history from a variety of other popular web frameworks from other languages. It takes its roots from Asia, where it seems a few of the companies are using it in production. The website provides a very straightforward example, along with a plethora of documentation (including figures, figures!) speaking to each element of the framework. It outlines pretty much every stage in its pipeline and has a lot of examples on how to do pretty much everything related to the application. The big question is whether or not it&amp;#39;s popular outside of Asia and if not, why so. Perhaps a language barrier, or perhaps a lack of popularity of golang. Either way, major points to this framework for its thorough documentation and full-featured components.&lt;/p&gt;
+        
+            &lt;li&gt;&lt;a href=&#34;https://echo.labstack.com/&#34; style=&#34;font-weight: 600;&#34;&gt;Echo&lt;/a&gt; -  Echo says its high speed is what sets it apart, and it seems easy enough to use. However, it seems to offer fewer features than its competitors and the website is less than thorough for newcomers.&lt;/li&gt;
+            &lt;p style=&#34;font-size: 13px&#34;&gt;Echo seems a framework similar to Gin (and I supposed Martini by extension). Again, touts its lightweight-ness and fast routing, along with flexible middleware extensibility. It seems to have hit v2 with its API, and it offers some interesting capabilities over Gin. Specifically, it has unique handling of binding of input into objects (though still lacking and ORM) and application of middleware to only specific groups or routes. At the end, however, it seems immature by its website, due to a dearth of real documentation or enough examples. Still a contender, but the website is lacking in a variety of aspects, which reflects poorly on the product.&lt;/p&gt;
+        
+            &lt;li&gt;&lt;a href=&#34;https://gin-gonic.github.io/gin/&#34; style=&#34;font-weight: 600;&#34;&gt;Gin&lt;/a&gt; -  A v1.0 framework with support for middlewares and lightweight routing, but possibly with slow or stalled development. It primarly touts itself as Martini with incredibly high performance. A definite contender.&lt;/li&gt;
+            &lt;p style=&#34;font-size: 13px&#34;&gt;The first thing Gin claims is super high performance. When I had previously played with Golang, Martini was still the de-facto standard for web frameworks, so that&amp;#39;s quite a bold claim to be up to 40x faster than Martini. It uses one of those fancy routers that uses one of those nobody-ever-writes-that-stuff algorithms (but really, Radix trees are incredibly cool and powerful; if you don&amp;#39;t know what they are or what they can do, I strongly suggest it) which you only hear about in theory. Basically what I can get off their webpage is that they are Martini&amp;#43;&amp;#43;, where the big draw is performance and the clarity that Martini brought. The github page has a few examples, and it seems that they&amp;#39;ve reached 1.0, so things are stable. After reading some of the examples, it provides a very lightweight webframework for routing and handling of requests, but lacks some of the features you&amp;#39;d find in a more full-blown framework, such as an ORM. At the time of writing, it seems the last development on any of the branches was done around 4 months ago or so, which is a little dis-heartening. I think it offers the ability to plug in a number of middlewares, but the lack of current development makes me a sad panda. Not the end of the world, and I wonder if I so desperately need incredibly high performance, but still a strong contender.&lt;/p&gt;
+        
+            &lt;li&gt;&lt;a href=&#34;https://goji.io/&#34; style=&#34;font-weight: 600;&#34;&gt;Goji&lt;/a&gt; -  While a nice website, it lacks any real documentation or examples. For this reason, I can&amp;#39;t really choose this as my framework of choice&lt;/li&gt;
+            &lt;p style=&#34;font-size: 13px&#34;&gt;There&amp;#39;s not too much to say about Goji; the website kind of says it all. A very minimalistic approach to a website, but it lacks enough examples or enough documentation for me to justify going with it.&lt;/p&gt;
+        
+            &lt;li&gt;&lt;a href=&#34;http://iris-go.com/&#34; style=&#34;font-weight: 600;&#34;&gt;Iris&lt;/a&gt; -  Iris is a rather full-featured framework that offers good documentations and examples. It&amp;#39;s actively developed and brings a lot to the table; a top-choice for any web project in Golang.&lt;/li&gt;
+            &lt;p style=&#34;font-size: 13px&#34;&gt;Iris brings about a lot of bragging, if you will, on its homepage. Whether it&amp;#39;s well deserved is unclear, but it provides a number of useful pages in its documentation as well as a number of examples. The sheer size of the menu can be intimidating. Overall, it provides a relatively clean sytax with some flexibility that can be neatly organized. However much of a godsend this might seem, it does have its drawbacks, such as lack of features that one might want, such as automatic migration handling. The examples are also generally half-baked small examples in the range of a few dozen lines, as opposed to a full-blown example. The developer also makes odd points sometimes, such as his choice of &amp;#39;party&amp;#39; for an API grouping due to its [fun](https://godoc.org/github.com/kataras/iris#Framework.Party). Also, the good people at [reddit](https://www.reddit.com/r/golang/comments/4ot75d/katarasiris_the_fastest_web_framework_for_go_in/) keep you on track to point out there are very few tests, which is a bit disconcerting. The godocs themselves also point to some messiness on the part of the developer, with malformed syntax issues.&lt;/p&gt;
+        
+            &lt;li&gt;&lt;a href=&#34;https://github.com/go-martini/martini&#34; style=&#34;font-weight: 600;&#34;&gt;Martini&lt;/a&gt; -  A no-longer maintained framework, it had its high point, but I would rather choose something actively supported&lt;/li&gt;
+            &lt;p style=&#34;font-size: 13px&#34;&gt;Probably one of the earlier web frameworks which gained traction in the Golang community, Martini provides a light-weight and simple sinatra-style interface to HTTP routing and handling. However, it is no longer maintained. Whether because it has reached a peak maturity, a lack of community, or because the maintainer no longer has time, it supports only up to gov1.1. As such, I&amp;#39;m ruling it out because it would quickly fall behind and get out-dated with new version of Golang.&lt;/p&gt;
+        
+            &lt;li&gt;&lt;a href=&#34;https://revel.github.io/&#34; style=&#34;font-weight: 600;&#34;&gt;Revel&lt;/a&gt; -  One of the new kids on the block, Revel is home to many developer-craved features. If you&amp;#39;re okay trying something in flux, then this is for you.&lt;/li&gt;
+            &lt;p style=&#34;font-size: 13px&#34;&gt;At the end of the day, Revel seems to offer many of the features that any developer would want in their web framework. It&amp;#39;s got great documentation and a fair share of examples on its homepage. It follows a very familiar design of one thread per request, and it built as a layer on top of the Golang HTTP server. It offers a variety of options familiar to the Rails framework in Ruby, including similar routing and layout of user-generated content (controllers, templates/views). It even offers more transparency in its middleware and callbacks for before/after request handling. However, it lacks an ORM and the model portion of MVC. Stated on their own website, they are pre-1.0 as of this writing, and a high rate of change is still expected. Seeing as this was the top hit on Google, I&amp;#39;m not disappointed. Whether it took inspiration from other frameworks or the developers have a keen mind for design, it touts a boat of helpful features and clean documentation as well as samples. The scary part of using this is the &amp;#39;rate of change is still high&amp;#39; and &amp;#39;early adopters only&amp;#39;. I&amp;#39;m incredibly excited for what this can become, but it&amp;#39;s a bit too immature for me to want to move forward with it. I think in the future this could be the go-to choice for Golang, but maybe in a few months after it hits 1.0.&lt;/p&gt;
+        
+
+    
+    &lt;/ul&gt;
+
+
+
+
+&lt;p&gt;I really liked Iris&amp;ndash;it offers a number of useful features that developers would need and it has a plethora of documentation. However, it&amp;rsquo;s lack of testing, documentation issues, and seeming lack of maturity on the part of the developer would have to lead me away from it (immaturity on the part of the developers is possibly scarier than anything).&lt;/p&gt;
+
+&lt;p&gt;At the end of the day, only one other of these frameworks really made me feel comfortable enough to try using, and that&amp;rsquo;s Beego. It&amp;rsquo;s full-featured, has copious amounts of documentation, and is stable so that a real amount of development can get done. It&amp;rsquo;s also used by a variety of different companies in production, so it definitely checks the boxes for stability and support. I&amp;rsquo;m not quite sure my needs for performance, but I can say with some confidence that my project is very niche and that unless it&amp;rsquo;s performance is a crawl, it&amp;rsquo;ll definitely fulfill my needs.&lt;/p&gt;
+
+&lt;p&gt;Also, don&amp;rsquo;t get me wrong; while you can simply pick a tool cause it fulfills your needs, for a personal project, you should definitely pick something that&amp;rsquo;s fun (something you do in your spare time should be fun, after all). Sticking with golang is a personal choice, but if I didn&amp;rsquo;t feel like using Beego was a good experience, I would definitely have moved over to Python or something else. Having done some starter work with it, I can definitely tell you that the modularity it provides makes it feel so clean and nice to work with. Until I find major issues with it, I can safely say that I would definitely recommend it if you&amp;rsquo;re looking to start a web project with golang.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Getting Started</title>
