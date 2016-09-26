@@ -1639,7 +1639,7 @@
 /* Type */
 
 	body, input, select, textarea {
-		color: rgba(255, 255, 255, 0.55);
+		color: #101010;
 		font-family: Arial, Helvetica, sans-serif;
 		font-size: 16.5pt;
 		font-weight: normal;
@@ -2009,7 +2009,7 @@
 		input[type="button"]:hover,
 		button:hover,
 		.button:hover {
-			border-color: rgba(255, 255, 255, 0.55) !important;
+			border-color: #101010 !important;
 		}
 
 			input[type="submit"]:hover:after,
@@ -2442,7 +2442,7 @@
 		input[type="checkbox"] + label,
 		input[type="radio"] + label {
 			text-decoration: none;
-			color: rgba(255, 255, 255, 0.55);
+			color: #101010;
 			cursor: pointer;
 			display: inline-block;
 			font-size: 1em;
@@ -3428,7 +3428,7 @@
 					}
 
 						#header > nav > ul > li a:hover {
-							color: rgba(255, 255, 255, 0.55);
+							color: #101010;
 						}
 
 						#header > nav > ul > li a.active {
@@ -3787,7 +3787,7 @@
 			}
 
 			#sidebar nav a:hover {
-				color: rgba(255, 255, 255, 0.55);
+				color: #101010;
 			}
 
 			#sidebar nav a.active {
