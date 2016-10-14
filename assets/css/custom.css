@@ -95,3 +95,13 @@ body.is-loading #sidebar > .inner > #social > li {
         display: none;
     }
 }
+
+#sidebar {
+    border-right: thin solid rgba(94, 66, 166, 0.375);
+}
+
+@media screen and (max-width: 1280px) {
+    #sidebar {
+        border-right: none;
+    }
+}
