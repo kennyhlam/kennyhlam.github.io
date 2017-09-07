@@ -1622,7 +1622,7 @@
 	}
 
 	body {
-		background: #f4f4f4;
+		background: #312450;
 	}
 
 		body.is-loading *, body.is-loading *:before, body.is-loading *:after {
@@ -1639,6 +1639,7 @@
 /* Type */
 
 	body, input, select, textarea {
+		/* changed from rgba(255, 255, 255, 0.55) to #101010, controls text color */
 		color: #101010;
 		font-family: Arial, Helvetica, sans-serif;
 		font-size: 16.5pt;
@@ -1675,6 +1676,7 @@
 		-webkit-transition: color 0.2s ease, border-bottom-color 0.2s ease;
 		-ms-transition: color 0.2s ease, border-bottom-color 0.2s ease;
 		transition: color 0.2s ease, border-bottom-color 0.2s ease;
+		/* changed from rgba(255, 255, 255, 0.35) to #909090, controls the bottom border of html links */
 		border-bottom: dotted 1px #909090;
 		color: inherit;
 		text-decoration: none;
@@ -1682,10 +1684,12 @@
 
 		a:hover {
 			border-bottom-color: transparent;
+			/* changed from ffffff to 3a3a3a, controls the color of hovered links */
 			color: #3a3a3a;
 		}
 
 	strong, b {
+		/* changed from ffffff to 3a3a3a, controls the color of strong/bold text */
 		color: #3a3a3a;
 		font-weight: bold;
 	}
@@ -1699,7 +1703,8 @@
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: #3a3a3a;
+		/* changed from ffffff to 1010101, controls the text color of headers */
+		color: #101010;
 		font-weight: bold;
 		line-height: 1.5;
 		margin: 0 0 0.5em 0;
@@ -1721,10 +1726,10 @@
 		}
 
 			h1.major:after {
-				background-image: -moz-linear-gradient(to right, #5e42a6, #e8e8e8);
-				background-image: -webkit-linear-gradient(to right, #5e42a6, #e8e8e8);
-				background-image: -ms-linear-gradient(to right, #5e42a6, #e8e8e8);
-				background-image: linear-gradient(to right, #5e42a6, #e8e8e8);
+				background-image: -moz-linear-gradient(to right, #5e42a6, #b74e91);
+				background-image: -webkit-linear-gradient(to right, #5e42a6, #b74e91);
+				background-image: -ms-linear-gradient(to right, #5e42a6, #b74e91);
+				background-image: linear-gradient(to right, #5e42a6, #b74e91);
 				-moz-transition: max-width 0.2s ease;
 				-webkit-transition: max-width 0.2s ease;
 				-ms-transition: max-width 0.2s ease;
@@ -1799,7 +1804,7 @@
 	}
 
 	blockquote {
-		border-left: solid 4px rgba(0, 0, 0, .6);
+		border-left: solid 4px rgba(255, 255, 255, 0.15);
 		font-style: italic;
 		margin: 0 0 2em 0;
 		padding: 0.5em 0 0.5em 2em;
@@ -1808,7 +1813,7 @@
 	code {
 		background: rgba(255, 255, 255, 0.05);
 		border-radius: 0.25em;
-		border: solid 1px rgba(0, 0, 0, .6);
+		border: solid 1px rgba(255, 255, 255, 0.15);
 		font-family: "Courier New", monospace;
 		font-size: 0.9em;
 		margin: 0 0.25em;
@@ -1831,7 +1836,7 @@
 
 	hr {
 		border: 0;
-		border-bottom: solid 1px rgba(0, 0, 0, .6);
+		border-bottom: solid 1px rgba(255, 255, 255, 0.15);
 		margin: 2em 0;
 	}
 
@@ -1855,7 +1860,7 @@
 
 	.box {
 		border-radius: 0.25em;
-		border: solid 1px rgba(0, 0, 0, .6);
+		border: solid 1px rgba(255, 255, 255, 0.15);
 		margin-bottom: 2em;
 		padding: 1.5em;
 	}
@@ -1891,7 +1896,7 @@
 		border: solid 1px !important;
 		border-color: rgba(255, 255, 255, 0.15) !important;
 		border-radius: 3em;
-		color: #3a3a3a !important;
+		color: #ffffff !important;
 		cursor: pointer;
 		display: inline-block;
 		font-size: 0.6em;
@@ -1925,7 +1930,7 @@
 			-webkit-transition: opacity 0.2s ease, -webkit-transform 0.2s ease;
 			-ms-transition: opacity 0.2s ease, -ms-transform 0.2s ease;
 			transition: opacity 0.2s ease, transform 0.2s ease;
-			background: #3a3a3a;
+			background: #ffffff;
 			border-radius: 3em;
 			content: '';
 			height: 100%;
@@ -1975,8 +1980,8 @@
 		input[type="button"].special,
 		button.special,
 		.button.special {
-			background-color: #3a3a3a;
-			color: #f4f4f4 !important;
+			background-color: #ffffff;
+			color: #312450 !important;
 		}
 
 			input[type="submit"].special:after,
@@ -2009,7 +2014,7 @@
 		input[type="button"]:hover,
 		button:hover,
 		.button:hover {
-			border-color: #101010 !important;
+			border-color: rgba(255, 255, 255, 0.55) !important;
 		}
 
 			input[type="submit"]:hover:after,
@@ -2029,7 +2034,7 @@
 			input[type="button"]:hover:active,
 			button:hover:active,
 			.button:hover:active {
-				border-color: #3a3a3a !important;
+				border-color: #ffffff !important;
 			}
 
 				input[type="submit"]:hover:active:after,
@@ -2052,6 +2057,7 @@
 		-ms-flex-wrap: wrap;
 		flex-wrap: wrap;
 		border-radius: 0.25em;
+		/* changed from solid 1px rgba(255, 255, 255, 0.15) to solid 1px rgba(0, 0, 0, .6), controls the border color of the features*/
 		border: solid 1px rgba(0, 0, 0, .6);
 		background: rgba(255, 255, 255, 0.05);
 		margin: 0 0 2em 0;
@@ -2060,6 +2066,7 @@
 		.features section {
 			padding: 3.5em 3em 1em 7em ;
 			width: 50%;
+			/* changed from solid 1px rgba(255, 255, 255, 0.15) to solid 1px rgba(0, 0, 0, .6), controls the border color of the features sections within the table (horizontal)*/
 			border-top: solid 1px rgba(0, 0, 0, .6);
 			position: relative;
 		}
@@ -2069,6 +2076,7 @@
 			}
 
 			.features section:nth-child(2n) {
+				/* changed from solid 1px rgba(255, 255, 255, 0.15) to solid 1px rgba(0, 0, 0, .6), controls the border color of the features sections within the table (vertical)*/
 				border-left: solid 1px rgba(0, 0, 0, .6);
 			}
 
@@ -2323,7 +2331,7 @@
 		}
 
 	label {
-		color: #3a3a3a;
+		color: #ffffff;
 		font-weight: bold;
 		line-height: 1.5;
 		margin: 0 0 0.7em 0;
@@ -2344,7 +2352,7 @@
 		background: rgba(255, 255, 255, 0.05);
 		border-radius: 0.25em;
 		border: none;
-		border: solid 1px rgba(0, 0, 0, .6);
+		border: solid 1px rgba(255, 255, 255, 0.15);
 		color: inherit;
 		display: block;
 		outline: 0;
@@ -2368,8 +2376,8 @@
 		input[type="tel"]:focus,
 		select:focus,
 		textarea:focus {
-			border-color: #3a3a3a;
-			box-shadow: 0 0 0 1px #3a3a3a;
+			border-color: #ffffff;
+			box-shadow: 0 0 0 1px #ffffff;
 		}
 
 	.select-wrapper {
@@ -2388,7 +2396,7 @@
 		}
 
 		.select-wrapper:before {
-			color: rgba(0, 0, 0, .6);
+			color: rgba(255, 255, 255, 0.15);
 			content: '\f078';
 			display: block;
 			height: 2.75em;
@@ -2406,8 +2414,8 @@
 		}
 
 	select option {
-		background-color: #f4f4f4;
-		color: #3a3a3a;
+		background-color: #312450;
+		color: #ffffff;
 	}
 
 	input[type="text"],
@@ -2442,7 +2450,7 @@
 		input[type="checkbox"] + label,
 		input[type="radio"] + label {
 			text-decoration: none;
-			color: #101010;
+			color: rgba(255, 255, 255, 0.55);
 			cursor: pointer;
 			display: inline-block;
 			font-size: 1em;
@@ -2466,7 +2474,7 @@
 			input[type="radio"] + label:before {
 				background: rgba(255, 255, 255, 0.05);
 				border-radius: 0.25em;
-				border: solid 1px rgba(0, 0, 0, .6);
+				border: solid 1px rgba(255, 255, 255, 0.15);
 				content: '';
 				display: inline-block;
 				height: 1.65em;
@@ -2480,16 +2488,16 @@
 
 		input[type="checkbox"]:checked + label:before,
 		input[type="radio"]:checked + label:before {
-			background: #3a3a3a;
-			border-color: #3a3a3a;
-			color: #e8e8e8;
+			background: #ffffff;
+			border-color: #ffffff;
+			color: #b74e91;
 			content: '\f00c';
 		}
 
 		input[type="checkbox"]:focus + label:before,
 		input[type="radio"]:focus + label:before {
-			border-color: #3a3a3a;
-			box-shadow: 0 0 0 1px #3a3a3a;
+			border-color: #ffffff;
+			box-shadow: 0 0 0 1px #ffffff;
 		}
 
 	input[type="checkbox"] + label:before {
@@ -2501,27 +2509,27 @@
 	}
 
 	::-webkit-input-placeholder {
-		color: #909090 !important;
+		color: rgba(255, 255, 255, 0.35) !important;
 		opacity: 1.0;
 	}
 
 	:-moz-placeholder {
-		color: #909090 !important;
+		color: rgba(255, 255, 255, 0.35) !important;
 		opacity: 1.0;
 	}
 
 	::-moz-placeholder {
-		color: #909090 !important;
+		color: rgba(255, 255, 255, 0.35) !important;
 		opacity: 1.0;
 	}
 
 	:-ms-input-placeholder {
-		color: #909090 !important;
+		color: rgba(255, 255, 255, 0.35) !important;
 		opacity: 1.0;
 	}
 
 	.formerize-placeholder {
-		color: #909090 !important;
+		color: rgba(255, 255, 255, 0.35) !important;
 		opacity: 1.0;
 	}
 
@@ -2550,9 +2558,9 @@
 			width: 2.5em;
 			height: 2.5em;
 			display: block;
-			background: #3a3a3a;
+			background: #ffffff;
 			border-radius: 100%;
-			color: #f4f4f4;
+			color: #312450;
 			text-align: center;
 			line-height: 2.5em;
 			margin: 0 0 1.3em 0;
@@ -2563,15 +2571,15 @@
 			}
 
 				.wrapper.style1 .icon.major:before {
-					color: #f0f0f0;
+					color: #5e42a6;
 				}
 
 				.wrapper.style1-alt .icon.major:before {
-					color: #f0f0f0;
+					color: #493382;
 				}
 
 				.wrapper.style2 .icon.major:before {
-					color: #e0e0e0;
+					color: #5052b5;
 				}
 
 				.wrapper.style2-alt .icon.major:before {
@@ -2579,7 +2587,8 @@
 				}
 
 				.wrapper.style3 .icon.major:before {
-					color: #e8e8e8;
+					/* changed from b74e91 to 240f1d, controls icon colors in style3 */
+					color: #240f1d;
 				}
 
 				.wrapper.style3-alt .icon.major:before {
@@ -2668,7 +2677,7 @@
 		}
 
 			ul.alt li {
-				border-top: solid 1px rgba(0, 0, 0, .6);
+				border-top: solid 1px rgba(255, 255, 255, 0.15);
 				padding: 0.5em 0;
 			}
 
@@ -2837,7 +2846,7 @@
 		}
 
 			ul.menu > li {
-				border-left: solid 1px rgba(0, 0, 0, .6);
+				border-left: solid 1px rgba(255, 255, 255, 0.15);
 				display: inline-block;
 				line-height: 1;
 				margin-left: 1.5em;
@@ -2883,7 +2892,7 @@
 	}
 
 	header p {
-		color: #909090;
+		color: rgba(255, 255, 255, 0.35);
 		position: relative;
 		margin: 0 0 1.5em 0;
 	}
@@ -2923,7 +2932,7 @@
 
 		.split > :nth-child(2n - 1) {
 			padding-right: 2.5em;
-			border-right: solid 1px rgba(0, 0, 0, .6);
+			border-right: solid 1px rgba(255, 255, 255, 0.15);
 		}
 
 		.split > :nth-child(2n) {
@@ -2969,7 +2978,7 @@
 			}
 
 				.split > * {
-					border-top: solid 1px rgba(0, 0, 0, .6);
+					border-top: solid 1px rgba(255, 255, 255, 0.15);
 					margin: 4em 0 0 0;
 					padding: 4em 0 0 0;
 					width: 100% !important;
@@ -3157,7 +3166,7 @@
 	}
 
 		table tbody tr {
-			border: solid 1px rgba(0, 0, 0, .6);
+			border: solid 1px rgba(255, 255, 255, 0.15);
 			border-left: 0;
 			border-right: 0;
 		}
@@ -3171,7 +3180,7 @@
 		}
 
 		table th {
-			color: #3a3a3a;
+			color: #ffffff;
 			font-size: 1em;
 			font-weight: bold;
 			padding: 0 0.75em 0.75em 0.75em;
@@ -3179,11 +3188,11 @@
 		}
 
 		table thead {
-			border-bottom: solid 2px rgba(0, 0, 0, .6);
+			border-bottom: solid 2px rgba(255, 255, 255, 0.15);
 		}
 
 		table tfoot {
-			border-top: solid 2px rgba(0, 0, 0, .6);
+			border-top: solid 2px rgba(255, 255, 255, 0.15);
 		}
 
 		table.alt {
@@ -3191,7 +3200,7 @@
 		}
 
 			table.alt tbody tr td {
-				border: solid 1px rgba(0, 0, 0, .6);
+				border: solid 1px rgba(255, 255, 255, 0.15);
 				border-left-width: 0;
 				border-top-width: 0;
 			}
@@ -3253,15 +3262,17 @@
 		}
 
 		.wrapper.style1 {
-            background-color: #f0f0f0;
+			/* changed from 5e42a6 to #f0f0f0 controls background color of style1 wrapper*/
+			background-color: #f0f0f0;
 		}
 
 		.wrapper.style1-alt {
+			/* changed from 493382 to f0f0f0, controls background color of style1-alt wrapper */
 			background-color: #f0f0f0;
 		}
 
 		.wrapper.style2 {
-			background-color: #e0e0e0;
+			background-color: #5052b5;
 		}
 
 		.wrapper.style2-alt {
@@ -3269,6 +3280,7 @@
 		}
 
 		.wrapper.style3 {
+			/* changed from b74e91 to e8e8e8, controls background color of style3 wrapper */
 			background-color: #e8e8e8;
 		}
 
@@ -3380,14 +3392,14 @@
 		display: -webkit-flex;
 		display: -ms-flex;
 		display: flex;
-		background-color: #f0f0f0;
+		background-color: #5e42a6;
 		cursor: default;
 		padding: 1.75em 2em;
 	}
 
 		#header > .title {
 			border: 0;
-			color: #3a3a3a;
+			color: #ffffff;
 			display: block;
 			font-size: 1.25em;
 			font-weight: bold;
@@ -3419,7 +3431,7 @@
 
 					#header > nav > ul > li a {
 						border: 0;
-						color: #909090;
+						color: rgba(255, 255, 255, 0.35);
 						display: inline-block;
 						font-size: 0.6em;
 						font-weight: bold;
@@ -3428,11 +3440,11 @@
 					}
 
 						#header > nav > ul > li a:hover {
-							color: #101010;
+							color: rgba(255, 255, 255, 0.55);
 						}
 
 						#header > nav > ul > li a.active {
-							color: #3a3a3a;
+							color: #ffffff;
 						}
 
 		@media screen and (max-width: 736px) {
@@ -3457,7 +3469,7 @@
 				}
 
 				#header > nav {
-					border-top: solid 1px rgba(0, 0, 0, .6);
+					border-top: solid 1px rgba(255, 255, 255, 0.15);
 					text-align: inherit;
 				}
 
@@ -3514,7 +3526,7 @@
 		}
 
 	#footer > .inner a {
-		border-bottom-color: rgba(0, 0, 0, .6);
+		border-bottom-color: rgba(255, 255, 255, 0.15);
 	}
 
 		#footer > .inner a:hover {
@@ -3523,6 +3535,7 @@
 
 	#footer > .inner .menu {
 		font-size: 0.8em;
+		/* changed from rgba(255, 255, 255, 0.15) to rgba(0, 0, 0, .6), controls the color of text in the footer */
 		color: rgba(0, 0, 0, .6);
 	}
 
@@ -3534,6 +3547,7 @@
 
 	#sidebar {
 		padding: 2.5em 2.5em 0.5em 2.5em ;
+		/* changed from 312450 to #f4f4f4, controls the background color for the sidebar */
 		background: #f4f4f4;
 		cursor: default;
 		height: 100vh;
@@ -3747,6 +3761,7 @@
 			-ms-transition: color 0.2s ease;
 			transition: color 0.2s ease;
 			border: 0;
+			/* changed from rgba(255, 255, 255, 0.35) to 909090, controls the color of the nonactive sidebar links*/
 			color: #909090;
 			display: block;
 			font-size: 0.6em;
@@ -3787,10 +3802,12 @@
 			}
 
 			#sidebar nav a:hover {
+				/* changed from rgba(255, 255, 255, 0.55) to 101010, controls the color of hovering over the sidebar navs */
 				color: #101010;
 			}
 
 			#sidebar nav a.active {
+				/* changed from #ffffff to #3a3a3a, controls the color of active sidebar links */
 				color: #3a3a3a;
 			}
 
