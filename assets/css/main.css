@@ -3526,7 +3526,8 @@
 		}
 
 	#footer > .inner a {
-		border-bottom-color: rgba(255, 255, 255, 0.15);
+		/* changed from rgba(255, 255, 255, 0.15) to _, controls the bottom border of links in footer */
+		/*border-bottom-color: rgba(255, 255, 255, 0.15);*/
 	}
 
 		#footer > .inner a:hover {
