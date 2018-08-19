@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<!--
+    Hyperspace by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+  <head>
+    <title>{{ page.title }}</title>
+    <meta charset="utf-8" />
+    <meta name="author" />
+    <meta name="description" content="TODO DESC" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--[if lte IE 8]><script src="{{ "assets/js/ie/html5shiv.js" | relURL }} ></script><![endif]-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="{{ "assets/css/main.css" | relative_url }}"/>
+    <link rel="stylesheet" href="{{ "assets/css/custom.css" | relative_url }}" />
+    <!--[if lte IE 9]><link rel="stylesheet" href="{{ "assets/css/ie9.css" | relative_url }}/><![endif]-->
+    <!--[if lte IE 8]><link rel="stylesheet" href="{{ "assets/css/ie8.css" | relative_url }}/><![endif]-->
+  </head>
+  <body>
+
+    <!-- Sidebar -->
+    <section id="sidebar">
+      <div class="inner">
+        <nav>
+          <ul>
+            <li><a href="{{ "#intro" | absolute_url }}">Welcome</a></li>
+            <li><a href="{{ "#about" | absolute_url }}">About</a></li>
+            <li><a href="{{ "#projects" | absolute_url }}">Projects</a></li>
+            <li><a href="{{ "assets/pdf/LamKenny_Resume_20171101.pdf" | relative_url }}" target="_blank">Resume</a></li>
+            <li><a href="{{ site.url }}/blog/">Blog</a></li>
+          </ul>
+        </nav>
+
+        <ul id="social" class="icons">
+          <li><a href="mailto:{{ site.social.email }}" class="fa-envelope"><span class="label">Email</span></a></li>
+          <li><a href="https://github.com/{{ site.social.github }}" class="fa-github"><span class="label">Github</span></a></li>
+          <li><a href="https://linkedin.com/in/{{ site.social.linkedin }}" class="fa-linkedin"><span class="label">LinkedIn</span></a></li>
+          <li><a href="{{ "feed.xml" | relative_url }}" class="fa-rss"><span class="label">RSS</span></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Wrapper -->
+    <div id="wrapper">

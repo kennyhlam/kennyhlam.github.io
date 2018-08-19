@@ -1,0 +1,119 @@
+---
+---
+/*
+    Custom CSS because hopefully I won't be writing enough CSS to necessitate Sass
+*/
+
+#sidebar > .inner > #social {
+    margin-bottom: 0;
+    margin-top: auto;
+
+    -moz-flex-direction: row;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+
+    -moz-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+
+    -moz-transition: opacity 1s ease;
+    -webkit-transition: opacity 1s ease;
+    -ms-transition: opacity 1s ease;
+    transition: opacity 1s ease;
+
+    opacity: 1;
+}
+
+#sidebar > .inner > #social > li {
+    -moz-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+    -moz-transition: opacity 0.15s ease, -moz-transform 0.75s ease;
+    -webkit-transition: opacity 0.15s ease, -webkit-transform 0.75s ease;
+    -ms-transition: opacity 0.15s ease, -ms-transform 0.75s ease;
+    transition: opacity 0.15s ease, transform 0.75s ease;
+    opacity: .9;
+}
+
+#sidebar > .inner > #social > li:nth-child(5) {
+    -moz-transition-delay: 0.45s;
+    -webkit-transition-delay: 0.45s;
+    -ms-transition-delay: 0.45s;
+    transition-delay: 0.45s;
+}
+
+#sidebar > .inner > #social > li:nth-child(4) {
+    -moz-transition-delay: 0.65s;
+    -webkit-transition-delay: 0.65s;
+    -ms-transition-delay: 0.65s;
+    transition-delay: 0.65s;
+}
+
+#sidebar > .inner > #social > li:nth-child(3) {
+    -moz-transition-delay: 0.85s;
+    -webkit-transition-delay: 0.85s;
+    -ms-transition-delay: 0.85s;
+    transition-delay: 0.85s;
+}
+
+#sidebar > .inner > #social > li:nth-child(2) {
+    -moz-transition-delay: 1.05s;
+    -webkit-transition-delay: 1.05s;
+    -ms-transition-delay: 1.05s;
+    transition-delay: 1.05s;
+}
+
+#sidebar > .inner > #social > li:nth-child(1) {
+    -moz-transition-delay: 1.25s;
+    -webkit-transition-delay: 1.25s;
+    -ms-transition-delay: 1.25s;
+    transition-delay: 1.25s;
+}
+
+#sidebar > .inner > #social > a {
+    -moz-transition: color 0.2s ease;
+    -webkit-transition: color 0.2s ease;
+    -ms-transition: color 0.2s ease;
+    transition: color 0.2s ease;
+}
+
+body.is-loading #sidebar > .inner > #social {
+    opacity: 0;
+}
+
+body.is-loading #sidebar > .inner > #social > li {
+    -moz-transform: translateX(-2em);
+    -webkit-transform: translateX(-2em);
+    -ms-transform: translateX(-2em);
+    transform: translateX(-2em);
+    opacity: 0;
+}
+
+@media screen and (max-width: 1280px) {
+    #social {
+        display: none;
+    }
+}
+
+#sidebar {
+    border-right: thin solid rgba(94, 66, 166, 0.375);
+}
+
+@media screen and (max-width: 1280px) {
+    #sidebar {
+        border-right: none;
+    }
+}
+
+article.post {
+    margin-top:1.25em;
+    margin-bottom:1.25em;
+    margin-right:12em;
+}
+
+.counter {
+    text-align:center;
+}

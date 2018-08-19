@@ -1,0 +1,10 @@
+<section class="wrapper style3 fullscreen fade-up">
+<div class="inner">
+	<h1 class="major">Posts</h1>
+	{{ $paginator := .Paginate (where .Site.Pages "Type" "posts") }}
+    {{ range $paginator.Pages }}
+        {{ .Render "summary" }}
+    {{ end }}
+    {{ partial "pagination" . }}
+</div>
+</section>

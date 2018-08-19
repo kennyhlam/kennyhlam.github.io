@@ -62,7 +62,7 @@
 		// Sidebar.
 			if ($sidebar.length > 0) {
 
-				var $sidebar_a = $sidebar.find('a');
+				var $sidebar_a = $sidebar.find('nav a');
 
 				$sidebar_a
 					.addClass('scrolly')
@@ -86,9 +86,14 @@
 					.each(function() {
 
 						var	$this = $(this),
-							id = $this.attr('href'),
-							$section = $(id);
+							id = $this.attr('href');
 
+                        // skip pdf and blog links
+                           if (id.indexOf('.pdf') != -1 || id.indexOf('blog') != -1)
+                               return;
+
+                        // grab out section from link
+						var $section = $(id.substr(id.indexOf('#')));
 						// No section for this link? Bail.
 							if ($section.length < 1)
 								return;
