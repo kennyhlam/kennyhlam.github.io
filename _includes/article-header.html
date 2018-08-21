@@ -6,7 +6,7 @@
               <time datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%Y-%m-%d" }}</time>
               &mdash; Tagged in
               {% for t in post.tags %}
-              <a href="tags{{ t | relative_url }}">{{ t }}</a> 
+              <a href="{{ site.url }}/tags/{{ t }}">{{ t }}</a> 
               {% endfor %}
               </span>
             </footer>

@@ -1,0 +1,18 @@
+---
+layout: default
+---
+
+      <section class="wrapper style3 fullscreen fade-up">
+        <div class="inner">
+          <h1 class="major">{{ page.title }}</h1>
+
+          {% for post in site.tags[page.tag] %}
+          <article class="post">
+            {% include article-header.html summary=true %}
+          </article>
+          {% endfor %}
+
+	    </div>
+      </section>
+
+

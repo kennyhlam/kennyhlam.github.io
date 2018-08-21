@@ -1,0 +1,14 @@
+---
+layout: list
+title: klam's tags
+---
+
+      <section class="wrapper style3 fullscreen fade-up">
+        <div class="inner">
+          <h1 class="major">Tags</h1>
+          {% for tag in site.tags %}
+          <p><a href="{{ tag[0] }}">{{ tag[0] }}</a></p>
+          {% endfor %}
+	    </div>
+      </section>
+
