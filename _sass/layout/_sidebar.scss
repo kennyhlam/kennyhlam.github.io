@@ -96,7 +96,7 @@
 				}
 
 				&:after {
-					@include vendor('background-image', 'linear-gradient(to right, #{_palette(sidebar-after1)}, #{_palette(sidebar-after2)})');
+					@include vendor('background-image', 'linear-gradient(to right, #{_palette(gradient-after1)}, #{_palette(gradient-after2)})');
 					@include vendor('transition', 'max-width #{_duration(transition)} ease');
 					max-width: 0;
 				}

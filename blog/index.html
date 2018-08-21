@@ -1,0 +1,18 @@
+---
+layout: list
+title: klam's blog
+---
+
+      <section class="wrapper style3 fullscreen fade-up">
+        <div class="inner">
+          <h1 class="major">Posts</h1>
+
+          {% for post in paginator.posts %}
+          <article class="post">
+            {% include article-header.html summary=true %}
+          </article>
+          {% endfor %}
+
+	    </div>
+      </section>
+

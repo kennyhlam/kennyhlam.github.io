@@ -1,11 +1,12 @@
 {% include header.html %}
-<section class="wrapper style3 fullscreen fade-up">
-<div class="inner">
-    <a class="btn home" href="{{ site.baseurl }}" title="TODO TITLE">&laquo;</a>
-    <article class="post">
-            {% include article-header.html %}
-            {{ page.content }}
-        </article>
-</div>
-</section>
+      <section class="wrapper style3 fullscreen fade-up">
+        <div class="inner">
+          <a class="btn home" href="{{ "blog" | relative_url }}" title="Blog">&laquo; Back to home</a>
+          <article class="post">
+            {% assign post = page %}
+            {% include article-header.html summary=false %}
+            {{ content }}
+          </article>
+        </div>
+      </section>
 {% include footer.html %}

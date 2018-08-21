@@ -1,5 +1,3 @@
----
----
 /*
     Custom CSS because hopefully I won't be writing enough CSS to necessitate Sass
 */
@@ -116,4 +114,16 @@ article.post {
 
 .counter {
     text-align:center;
+}
+
+.post-info {
+    color: _palette(fg-light);
+}
+
+h2.post-title {
+    margin-bottom: 0;
+}
+
+.post-summary p {
+    margin-bottom: .5em;
 }

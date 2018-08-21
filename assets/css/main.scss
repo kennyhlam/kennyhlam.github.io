@@ -29,8 +29,9 @@
 
 // Base.
 
-	@import 'base/page';
-	@import 'base/typography';
+    @import 'base/page';
+    @import 'base/typography';
+    @import 'base/syntax-highlighting';
 
 // Component.
 
@@ -54,3 +55,6 @@
 	@import 'layout/footer';
 	@import 'layout/sidebar';
 	@import 'layout/intro';
+
+// Custom.
+    @import 'custom';
