@@ -109,11 +109,12 @@ body.is-loading #sidebar > .inner > #social > li {
 article.post {
     margin-top:1.25em;
     margin-bottom:1.25em;
-    @include breakpoint(medium) {
-        margin-right: 22em;
-    }
+    max-width: 780px;
     @include breakpoint(small) {
-        margin-right: 8em;
+        max-width: 480px;
+    }
+    @include breakpoint(xlarge) {
+        max-width: 650px;
     }
 }
 
